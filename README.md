@@ -10,8 +10,8 @@ based on hands-on practice.
 ## 👤 About Me
 - 🎯 Goal: Learn Ethical Hacking and Land First Job
 - 📍 Currently Learning: Linux Fundamentals
-- 🔗 TryHackMe: https://tryhackme.com/p/mishrakhushi8905
-- 🔗 LinkedIn: www.linkedin.com/in/khushi-mishra-192189217
+- 🔗 TryHackMe: (https://tryhackme.com/p/mishrakhushi8905)
+- 🔗 LinkedIn: (www.linkedin.com/in/khushi-mishra-192189217)
 
 ---
 
