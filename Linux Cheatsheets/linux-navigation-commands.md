@@ -108,6 +108,7 @@ ls -lS                      # Sort by size
 ls -lt                      # Sort by modification time
 ls -R                       # Recursive (show subdirectories)
 ls /path                    # List specific directory
+ls -r                       # sort the files in dir in reverse alpha order
 ```
 
 ### Examples
@@ -144,6 +145,82 @@ Permissions │ │    │    │    │  │  │    └─ Filename
 ```
 
 ---
+## Pipe (|)
+ It is a operator ,used to link multiple independent files that connects the stout of one command to stdin of another.
+ ### Example
+ ```bash
+ $ ls -la /etc | less
+```
+Note : It lists all files (including hidden ones) in the /etc directory with detailed information and displays the output one page at a time so it's easy to read.
+___
+## tee
+It helps to split the output in two direction , one is to stdout and another to a specific file
+### Example
+```bash
+ $ ls | tee peanut.txt
+```
+Note - it forward the output of ls to peanut.txt file
+___
+## touch 
+It is used to creat new file and change file timestamps.
+### 1) Creating file 
+#### Example
+```bash
+ $ touch file.txt
+```
+you can also create multiple files at once 
+```bash
+ $ touch file1.txt file 2.txt file3.log
+```
+### 2) Changing timestamps 
+#### Example
+```bash
+# Checking original timestamp
+ $ ls -l linuxfile
+# Updating timestamp
+ $ touch linuxfile
+# Checking new timestamp
+ $ ls -l linuxfile
+```
+### Advance timestamp control
+1. -r - allow to change the timestamp of a file in match of another file
+#### Example
+```bash
+ $ touch -r file1.txt file2.txt
+```
+2.-d - allow to set the timestamp to a specific date and time
+#### Example
+```bash
+ $ touch -r file1.txt file2.txt
+```
+---
+### file
+In linux, filename doesn't represent the content of file.So,file command is used to do the same
+#### Example
+```bash
+ $ file file.txt
+ file.txt: ASCII text, with no line terminators
+```
+---
+## cat 
+It is used to read the content  of a file
+### Catenating 
+#### Example
+```bash
+ $ cat file1.txt file2.txt
+```
+its show the content of file on terminal in same given order
+### Redirection
+#### Example
+```bash
+ $ cat > file2.txt
+```
+Now,type the text in terminal and press ctrl + D ,if file2.txt doesn't exist ,it will creat a one.
+### Command options
+  1. -n : numbers all the output lines, starting from 1
+  2. -b : numbers only non- empty output lines
+---
+
 
 ## mkdir - Make Directory
 Create new directories
