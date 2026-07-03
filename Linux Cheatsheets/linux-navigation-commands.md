@@ -44,12 +44,7 @@ khushi_18
 ## pwd - Print Working Directory
 Shows your current location in the file system
 
-### Syntax
-```bash
-pwd
-```
-
-### Example
+#### Example
 ```bash
 $ pwd
 /home/username/Documents
@@ -65,7 +60,7 @@ $ pwd
 ## cd - Change Directory
 Navigate between directories
 
-### Syntax
+#### Syntax
 ```bash
 cd /path/to/directory       # Absolute path
 cd dirname                  # Relative path
@@ -74,7 +69,7 @@ cd ~                        # Home directory
 cd -                        # Previous directory
 ```
 
-### Examples
+#### Examples
 ```bash
 $ cd /home                  # Absolute path
 $ cd Documents              # Relative path (from current dir)
@@ -84,7 +79,7 @@ $ cd -                      # Go back to previous directory
 $ pwd                       # Verify location
 ```
 
-### Common Patterns
+#### Common Patterns
 ```bash
 cd /var/log                 # Navigate to absolute path
 cd ./Documents              # Current dir + subfolder
@@ -97,7 +92,7 @@ cd ~/Downloads              # Home + Downloads
 ## ls - List Files and Directories
 Display directory contents
 
-### Syntax
+#### Syntax
 ```bash
 ls                          # Simple listing
 ls -l                       # Long format (detailed)
@@ -111,7 +106,7 @@ ls /path                    # List specific directory
 ls -r                       # sort the files in dir in reverse alpha order
 ```
 
-### Examples
+#### Examples
 ```bash
 $ ls
 Documents  Downloads  file.txt
@@ -130,7 +125,7 @@ $ ls -lh
 drwxr-xr-x 2 user user  4.0K Jun 28 11:22 Documents
 ```
 
-### Understanding ls -l Output
+#### Understanding ls -l Output
 ```
 -rw-r--r-- 1 user user 4096 Jun 28 10:30 file.txt
 │││││││││  │ │    │    │    │  │  │    │
@@ -147,32 +142,32 @@ Permissions │ │    │    │    │  │  │    └─ Filename
 ---
 ## Pipe (|)
  It is a operator ,used to link multiple independent files that connects the stout of one command to stdin of another.
- ### Example
+ #### Example
  ```bash
  $ ls -la /etc | less
 ```
 Note : It lists all files (including hidden ones) in the /etc directory with detailed information and displays the output one page at a time so it's easy to read.
 ___
 ## tee
-It helps to split the output in two direction , one is to stdout and another to a specific file
-### Example
+It helps to split the output in two direction , one is to stdout and another to a specific file.
+#### Example
 ```bash
  $ ls | tee peanut.txt
 ```
-Note - it forward the output of ls to peanut.txt file
+Note - it forward the output of ls to peanut.txt file.
 ___
 ## touch 
 It is used to creat new file and change file timestamps.
-### 1) Creating file 
+### Creating file 
 #### Example
 ```bash
  $ touch file.txt
 ```
-you can also create multiple files at once 
+you can also create multiple files at once .
 ```bash
  $ touch file1.txt file 2.txt file3.log
 ```
-### 2) Changing timestamps 
+### Changing timestamps 
 #### Example
 ```bash
 # Checking original timestamp
@@ -183,19 +178,19 @@ you can also create multiple files at once
  $ ls -l linuxfile
 ```
 ### Advance timestamp control
-1. -r - allow to change the timestamp of a file in match of another file
+1. -r - allow to change the timestamp of a file in match of another file.
 #### Example
 ```bash
  $ touch -r file1.txt file2.txt
 ```
-2.-d - allow to set the timestamp to a specific date and time
+2. -d - allow to set the timestamp to a specific date and time.
 #### Example
 ```bash
  $ touch -r file1.txt file2.txt
 ```
 ---
 ### file
-In linux, filename doesn't represent the content of file.So,file command is used to do the same
+In linux, filename doesn't represent the content of file.So,file command is used to do the same.
 #### Example
 ```bash
  $ file file.txt
@@ -203,13 +198,13 @@ In linux, filename doesn't represent the content of file.So,file command is used
 ```
 ---
 ## cat 
-It is used to read the content  of a file
+It is used to read the content  of a file.
 ### Catenating 
 #### Example
 ```bash
  $ cat file1.txt file2.txt
 ```
-its show the content of file on terminal in same given order
+its show the content of file on terminal in same given order.
 ### Redirection
 #### Example
 ```bash
@@ -220,8 +215,31 @@ Now,type the text in terminal and press ctrl + D ,if file2.txt doesn't exist ,it
   1. -n : numbers all the output lines, starting from 1
   2. -b : numbers only non- empty output lines
 ---
-
-
+## less
+This command allow user to read and navigate through the file, page by page in page format .
+### Navigation and Controls
+1) Arrows and pages key - ⬅️ <kbd>←</kbd>➡️ <kbd>→</kbd>⬆️ <kbd>↑</kbd>⬇️ <kbd>↓</kbd> to navigate through the file line by line or page by page.
+2) Go to start - [Press g] to move directly to the beginning of the text file.
+3) Go to end - [Press G] to jump to end of the file.
+4) Help menu - While inside less, [Press h]
+5) Quiting less - [Press q]
+---
+## history
+This command keeps a recorrd of all of your recent used command.
+#### Example
+```bash
+$ history
+1  history
+    2  cd ..
+    3  cd ~
+    4  ls
+    5  cat file.txt
+    6  history
+```
+1) !! shortcut - It is used to use your most recent or previous one used command.
+2)  Clearing history - $ history -c
+3)  Writing to file - $ history -w
+---
 ## mkdir - Make Directory
 Create new directories
 
@@ -232,7 +250,7 @@ mkdir -p path/to/dir        # Create nested directories (with parents)
 mkdir dir1 dir2 dir3        # Create multiple directories
 ```
 
-### Examples
+#### Examples
 ```bash
 $ mkdir Documents
 $ ls -l
@@ -271,7 +289,7 @@ rm -f filename              # Force remove (no confirmation)
 rm -rf dirname              # Force remove directory (dangerous!)
 ```
 
-### Examples
+#### Examples
 ```bash
 # Remove single file
 $ rm test.txt
@@ -286,7 +304,8 @@ Documents
 # Remove directory (with contents)
 $ rm -r Documents
 $ ls
-(empty)
+# Remove empty directory
+$ rmdir Downloads
 
 # Force remove
 $ rm -f important.txt
@@ -325,7 +344,7 @@ cp file1 file2 dest/        # Copy multiple files to directory
 cp -v source dest           # Verbose (show what's being copied)
 ```
 
-### Examples
+#### Examples
 ```bash
 # Copy single file
 $ cp notes.txt backup.txt
@@ -363,7 +382,22 @@ cp important.txt ~/backups/
 # Copy entire project
 cp -r myproject ~/backup/myproject_backup
 ```
+### Handling file overwrites
+By default, cp will overwrites a file at the destination
+ 1) -i - prompts for confirmation, prevent unwanted data loss
+  ```bash
+  $ cp -i km file.txt
+  ```
+2) -f - for to force an overwrite
+  ```bash
+   $ cp -f km file.txt
+  ```
 
+### Preserving file attribute 
+To make exact replica of original file with same content,meta data etc.,use -p
+ ```bash
+   $ cp -p km file.txt
+  ```
 ---
 
 ## mv - Move and Rename Files
@@ -410,6 +444,10 @@ file1.txt  file2.txt  file3.txt
 $ mv -v important.txt backup/
 'important.txt' -> 'backup/important.txt'
 ```
+### Important options for the mv command
+By default, mv will overwrites a existing file with same name 
+1) -i - prompt for confirmation
+2) -b - backup your older version with a rename having [~] in its name
 
 ### Difference Between cp and mv
 ```bash
